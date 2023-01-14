@@ -1,0 +1,53 @@
+git init
+touch README.md
+
+vim README.md
+git add README.md
+git commit -S -m "Initial commit" 
+git switch -c feature1
+
+vim README.md
+git commit -S -a -m "Add dog and update moose"
+git switch main
+
+vim README.md
+git commit -S -a -m "Change moose to mammoth"
+
+vim README.md
+git commit -S -a -m "Fix misspelling"
+
+git merge --no-ff feature1
+vim README.md
+git add README.md
+git commit -S -m "Merge branch 'feature1'"
+
+git tag extinct
+git reset --hard HEAD^
+git branch feature2
+
+vim README.md
+git commit -S -a -m "Change first letter to upper case"
+
+git switch feature2
+
+touch fix1.txt
+git add fix1.txt
+git commit -S -m "Add fix1.txt"
+
+touch fix2.txt
+git add fix2.txt
+git commit -S -m "Add fix2.txt"
+
+git switch main
+ls
+
+git cherry-pick 9ddab14
+ls
+vim fix2.txt
+
+git remote add origin https://github.com/jLereback/Git_Lab1.git
+git branch -M main
+git push -u origin main
+git push -u origin feature1
+git push -u origin feature2
+git push origin extinct
